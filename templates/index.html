@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+    body {
+        background: url({% static 'images/banner1.png' %});
+    }
+
+    .eye {
+        display: inline-block;
+        position: relative;
+        top: 440px;
+        left: 631px;
+    }
+
+    .eye img {
+        width: 60%;
+        height: 60%;
+    }
+
+    .info {
+        display: inline-block;
+        position: relative;
+        top: 62px;
+        left: 337px;
+        font-size: 30px;
+        letter-spacing: 7px;
+        color: #ffffff;
+    }
+
+    .btn {
+        position: relative;
+        top: 200px;
+        left: -100px;
+        height: 118px;
+        display: inline-block;
+    }
+
+    .btn span {
+        display: inline-block;
+        width: 400px;
+        height: 150px;
+        margin: 0 auto;
+        background: url({% static 'images/bannerBtn2.png' %}) no-repeat;
+        background-size: 100% 100%;
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 150px;
+        text-align: center;
+    }
+
+    .btn span a {
+        color: #fff;
+        font-weight: normal;
+        display: block;
+        text-indent: 0px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    span:hover {
+        background: url({% static 'images/bannerBtn1.png' %}) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    span:hover a {
+        color: rgba(3, 87, 216, 1);
+    }
+
+    .hand {
+        display: inline-block;
+        width: 75px;
+        height: 43px;
+        position: relative;
+        top: 620px;
+        left: -851px;
+        background: url({% static 'images/hand.png' %}) no-repeat;
+        animation: handmove .8s infinite;
+
+        transform-origin: left center;
+    }
+
+    @keyframes handmove {
+        0% {
+
+            transform: rotate(30deg);
+        }
+
+        50% {
+
+            transform: rotate(10deg);
+        }
+
+        100% {
+
+            transform: rotate(0deg);
+        }
+    }
+
+    #clock {
+        position: relative;
+        top: 435px;
+        left: 1261px;
+        width: 12px;
+        height: 24px;
+        background: url({% static 'images/下载.png' %});
+    }
+</style>
+
+<body>
+    <div class="eye">
+        <img src="{% static 'images/eyes.801f2da.gif' %}" alt="">
+    </div>
+    <div class="info">
+        <h1>
+            <h1>智能好用的聊天机器人</h1>
+        </h1>
+    </div>
+    <div class="btn">
+        <span>
+            <a href="http://127.0.0.1:8000/bot/hello/">
+                开始聊天
+            </a>
+        </span>
+    </div>
+    <div class="hand">
+
+    </div>
+    <div id="clock">
+
+    </div>
+</body>
+<script>
+    let clock = document.getElementById('clock')
+    setInterval(() => {
+        if (clock.style.display === "none") {
+            clock.style.display = "block";
+        } else {
+            clock.style.display = "none";
+        }
+    }, 500);
+</script>
+
+</html>
